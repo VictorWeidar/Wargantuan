@@ -46,7 +46,7 @@ public class ManageTerrain : MonoBehaviour
 
     void GenerateTerrain(int _levelIndex)
     {
-        string[] lines = System.IO.File.ReadAllLines(string.Format("{0}/Level Files/level_{1}.csv", levelFileDirPath, _levelIndex));
+        string[] lines = System.IO.File.ReadAllLines(string.Format("{0}/Level Files/level_{1}.csv", Application.streamingAssetsPath, _levelIndex));
         rows = lines.Length;
         for (int row = 0, cols0 = 0; row < rows; ++row, cols0 = 0) {
             nodes.Add(new List<AdjacencyListNode<Tile>>());
